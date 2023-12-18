@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 Metacritic de Todos os Tempos</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <link rel="stylesheet" type="text/css" href="styles.css"/>
+</head>
+<body>
+
+  <header>
+    <h1>BookNexus</h1>
+  </header>
+
+  <main>
+    <div class="games-carousel" id="games-carousel"></div>
+
+    <div class="reviews-container">
+      <h2>Vale ou Não a Pena Comprar</h2>
+      <ul class="game-reviews">
+        <!-- Lista manual dos jogos e suas críticas -->
+        <a href=""> <li>
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202302/2321/3098481c9164bb5f33069b37e49fba1a572ea3b89971ee7b.jpg" alt="Baldur's Gate">
+          <p>Baldur's Gate</p>
+          <p>Metacritic Score: 90</p>
+        </li></a>
+        <a href=""><li>
+          <img src="https://gamehall.com.br/wp-content/uploads/2017/11/skyrim-h.jpg" alt="Skyrim">
+          <p>Skyrim</p>
+          <p>Metacritic Score: 94</p>
+        </li></a>
+        <a href=""><li>
+          <img src="https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-888877-52.jpg" alt="Hogwarts Legacy">
+          <p>Hogwarts Legacy</p>
+          <p>Metacritic Score: 88</p>
+        </li></a>
+      </ul>
+    </div>
+
+    <div class="reviews-container">
+      <h2>NÃO vale apena comprar</h2>
+      <ul class="game-reviews">
+        <!-- Lista manual dos jogos e suas críticas -->
+        <a href=""> <li>
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202302/2321/3098481c9164bb5f33069b37e49fba1a572ea3b89971ee7b.jpg" alt="Baldur's Gate">
+          <p>Baldur's Gate</p>
+          <p>Metacritic Score: 90</p>
+        </li></a>
+        <a href=""><li>
+          <img src="https://gamehall.com.br/wp-content/uploads/2017/11/skyrim-h.jpg" alt="Skyrim">
+          <p>Skyrim</p>
+          <p>Metacritic Score: 94</p>
+        </li></a>
+        <a href=""><li>
+          <img src="https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-888877-52.jpg" alt="Hogwarts Legacy">
+          <p>Hogwarts Legacy</p>
+          <p>Metacritic Score: 88</p>
+        </li></a>
+      </ul>
+    </div>
+
+
+  </main>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <script>
+    const apiKey = 'aeea2e7061b34b6a8f48251822f2b2c0';
+    const gamesContainer = document.getElementById('games-carousel');
+
+    fetch(`https://api.rawg.io/api/games?key=${apiKey}&page_size=10&ordering=-metacritic`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+
+        if (data.results && data.results.length > 0) {
+          data.results.forEach(game => {
+            const gameDiv = document.createElement('div');
+            gameDiv.classList.add('game-container');
+            gameDiv.style.backgroundImage = `url('${game.background_image}')`;
+
+            const gameTitle = document.createElement('h4');
+            gameTitle.textContent = game.name;
+            gameTitle.style.backgroundColor = '#027fe9'; // Altere para a cor desejada
+            gameTitle.style.width = '100%';
+            const metacriticScore = document.createElement('p');
+            if ('metacritic' in game && game.metacritic !== null) {
+              metacriticScore.textContent = ` ${game.metacritic}`;
+            } else {
+              metacriticScore.textContent = 'Metacritic Score: N/A';
+            }
+            
+            metacriticScore.style.fontSize = '20px';
+            metacriticScore.style.color = 'black';
+            metacriticScore.style.borderRadius = '10%';
+            metacriticScore.style.backgroundColor = '#42dc89'; // Altere para a cor desejada
+            metacriticScore.style.width = '60px';
+            metacriticScore.style.height = '50px';
+            gameDiv.appendChild(gameTitle);
+            gameDiv.appendChild(metacriticScore);
+            gamesContainer.appendChild(gameDiv);
+          });
+
+          // Configuração do carrossel usando a biblioteca Slick
+          $(document).ready(function(){
+            $('#games-carousel').slick({
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              autoplay: false,
+              autoplaySpeed: 2000,
+            });
+          });
+        } else {
+          console.log('Nenhum jogo encontrado');
+        }
+      })
+      .catch(error => console.error('Erro ao buscar dados dos jogos:', error));
+  </script>
+</body>
+</html>
