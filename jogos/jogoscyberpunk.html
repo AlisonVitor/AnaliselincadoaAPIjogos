@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="game-name"></title>
+  <link rel="stylesheet" type="text/css" href="../css/stylejogos.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/header.css"/>
+</head>
+<body>
+
+  <header>
+  
+    <nav>
+      <div class="menu-icon">
+        <!-- Ícone do menu hamburguer -->
+        Menu &#9776;
+      </div>
+      <ul>
+     
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Jogos</a></li>
+        <li><a href="#">Top Jogos</a></li>
+        <li><a href="#">Jogos para carroças</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="buttons-container">
+    <button class="content-button" id="start-button" onclick="showGameDetails()">Início</button>
+    <button class="content-button" id="weapons-button" onclick="showContent('armas')">Armas</button>
+    <button class="content-button" id="map-button" onclick="showContent('mapa')">Mapa</button>
+    <button class="content-button" id="tips-button" onclick="showContent('dicas')">Dicas</button>
+  </div>
+
+  <div class="content" id="armas" style="display: none;">
+    armas
+   </div>
+   
+   <div class="content" id="mapa" style="display: none;">
+     Conteúdo de Mapa
+   </div>
+   
+   <div class="content" id="dicas" style="display: none;">
+     Conteúdo de Dicas
+   </div>
+
+  <div class="game-details">
+    <h1 id="game-name"></h1>
+    <img id="game-image" src="" alt="Baldur's Gate">
+    <p id="game-description">
+      Cyberpunk 2077 é um jogo eletrônico de RPG de ação desenvolvido pela CD Projekt Red e publicado pela CD Projekt. A história do jogo é ambientada em Night City, um mundo aberto situado no universo fictício de Cyberpunk. Ele é jogado a partir de uma perspectiva em primeira pessoa, com os jogadores controlando um mercenário personalizável conhecido como V, que pode adquirir habilidades de hacking e maquinários, um arsenal de armas de longo alcance e opções de combate no estilo corpo a corpo. A trama segue a luta de V enquanto tenta lidar com um misterioso implante cibernético que ameaça substituir seu corpo com a personalidade e as memórias de uma celebridade falecida perceptível apenas por V; os dois devem trabalhar juntos se houver alguma esperança de separar os dois e salvar a vida de V.
+    </p>
+    <p id="game-metacritic"></p>
+    <div id="game-stores"></div>
+    <div id="game-screenshots"></div>
+    <div id="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/LembwKDo1Dk?si=vlCCDQjBlolFsNSi&amp;controls=0&amp;autoplay=1&amp;mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=true; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- Adicione outros elementos para conquistas, informações detalhadas, etc., conforme necessário -->
+  </div>
+
+  <script src="../js/scriptbuttonright.js"></script>
+  <script src="../js/scriptcyberpunk2077.js"></script>
+  <script src="../js/scriptmenu.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- Inclua jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</body>
+</html>

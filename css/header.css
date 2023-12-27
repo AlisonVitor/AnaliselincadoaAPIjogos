@@ -1,0 +1,104 @@
+header {
+    position: relative;
+    background-image: url('../img/header.jpg');
+    background-size: cover;
+    height: 80px;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Nome da fonte', sans-serif;
+  }
+  
+  /* Adiciona um overlay escuro para destacar o menu */
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.781);
+    z-index: 1; /* Coloca a sombra atrás do conteúdo do header */
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    z-index: 2; /* Coloca a sombra atrás do conteúdo do header */
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 2; /* Coloca a sombra atrás do conteúdo do header */
+    margin-top: 30px;
+    display: flex; /* Transforma a lista em um flex container */
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li:first-child {
+    margin-left: 0; /* Remove a margem do primeiro item */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #ffffff;
+    border-bottom: 2px solid #f7c117;
+  }
+  .menu-icon {
+    display: none; /* Exibe o ícone do menu hamburguer */
+  }
+/* Estilos para a resolução menor (celular) */
+@media screen and (max-width: 767px) {
+    /* Adiciona um overlay escuro para destacar o menu apenas no desktop */
+   
+    header {
+        height: 50px;
+      }
+      
+    nav {
+      justify-content: center; /* Alinha o menu à direita */
+     
+    }
+  
+    nav ul {
+      display: none; /* Oculta a lista de itens do menu */
+      flex-direction: column; /* Ajusta o layout para coluna */
+      position: absolute; /* Posiciona o menu hamburguer */
+      align-items: baseline;
+      width: 100%;
+      height: 255px;
+      right: 0; /* Alinha o menu à direita */
+      background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo do menu hamburguer */
+      padding: 6px;
+      z-index:10; /* Coloca o menu acima de tudo */
+    }
+    nav ul li{
+        margin-top: 5px;
+      }
+  
+    nav ul.active {
+      display: flex; /* Exibe o menu hamburguer ao clicar no ícone */
+    }
+  
+    .menu-icon {
+      display: block; /* Exibe o ícone do menu hamburguer */
+      z-index: 4;
+      font-size: 30px;
+
+    }
+  }
+  

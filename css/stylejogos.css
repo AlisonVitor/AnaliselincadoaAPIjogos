@@ -1,0 +1,225 @@
+      
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      
+      .game-details {
+        margin-top: 20px;
+        max-width: 800px;
+        background-color: #3f3e3e;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .game-details p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+        color: #ffffff;
+      }
+      
+      .game-details p:last-child {
+        margin-bottom: 0;
+        font-weight: bold;
+      }
+      
+      #game-image {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+  
+      #game-screenshots {
+        max-width: 100%; /* Defina o tamanho máximo */
+        overflow: hidden; /* Esconda o conteúdo que ultrapassar o tamanho máximo */
+        margin: 0 auto; /* Centralize o contêiner */
+        height: 100%;
+      }
+  
+      #game-stores {
+        font-size: 16px;
+      }
+  
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+  
+      li {
+        margin-bottom: 8px;
+      }
+  
+      a {
+        color: #0366d6;
+        text-decoration: none;
+      }
+  
+      a:hover {
+        text-decoration: underline;
+      }
+      #game-metacritic {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        background-color: #121312;
+        border: 2px solid #4caf50; /* Adiciona uma borda sólida com a cor especificada */
+      }
+      /* Estilos de cores baseados no valor do Metacritic */
+      #game-metacritic.high {
+        background-color: #121312; /* Verde para scores altos */
+        color: white;
+      }
+      
+      #game-metacritic.medium {
+        background-color: #ffc107; /* Amarelo para scores médios */
+        color: rgb(255, 255, 255);
+      }
+      
+      #game-metacritic.low {
+        background-color: #ff5722; /* Laranja para scores baixos */
+        color: white;
+      }
+      #game-name{
+        color: white;
+      }
+      #video-container {
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+     
+  
+      iframe {
+        width: 100%;
+        height: 315px;
+        border: none;
+      }/* Adicione isso ao seu arquivo de estilo (stylejogos.css ou styles.css) */
+/* Estilos para os botões na versão de celular */
+/* Estilos para a versão inicial e para telas menores */
+.buttons-container {
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items:baseline;
+}
+
+.buttons-container button {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  
+}
+/* Estilos para cada botão com cores diferentes */
+#start-button {
+  background-color: #ee720c; /* Verde */
+  color: white;
+}
+#weapons-button {
+  background-color: #4caf50; /* Verde */
+  color: white;
+}
+
+#map-button {
+  background-color: #2196f3; /* Azul */
+  color: white;
+}
+
+#tips-button {
+  background-color: #ff9800; /* Laranja */
+  color: white;
+}
+
+/* Hover para os botões */
+.buttons-container button:hover {
+  opacity: 0.8;
+}
+
+/* Estilos adicionais para a versão de tela grande (computador) */
+@media screen and (min-width: 1028px) {
+  .buttons-container {
+    right: calc((100vw - 880px) / 2 - 40px); /* 800px é a largura de .game-details, 40px de margem */
+  }
+}.content {
+  display: none;
+  background-color: #3f3e3e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffffff;
+}
+
+.content a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.texto-div
+{
+  text-align: justify;
+}
+/* Estilos base para o tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin: 2px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 70vw; /* Utilizando 70% da largura da tela */
+  max-width: 320px; /* Máximo de 320px de largura */
+  background-color: #181818;
+  color: #fff;
+  text-align: justify;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: calc(100% + 10px); /* Adicionando 10px de espaço */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Media query para telas menores, como celulares */
+@media screen and (max-width: 768px) {
+  .tooltip .tooltiptext {
+    width: 40vw; /* Utilizando 90% da largura da tela em dispositivos móveis */
+    max-width: 220px; /* Reduzindo o máximo de largura para telas menores */
+    left: 45%;
+    transform: translateX(-50%);
+    bottom: 100%; /* Posicionamento acima do elemento pai */
+    top: -40px; /* Ajuste para ficar acima do elemento pai */
+  }
+
+  .tooltip:hover .tooltiptext {
+    bottom: auto;
+    top: 100%; /* Exibindo o tooltip acima do elemento pai */
+  }
+}
+

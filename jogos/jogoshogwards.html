@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="game-name"></title>
+  <link rel="stylesheet" type="text/css" href="../css/stylejogos.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/header.css"/>
+</head>
+<body>
+
+  <header>
+  
+    <nav>
+      <div class="menu-icon">
+        <!-- Ícone do menu hamburguer -->
+        Menu &#9776;
+      </div>
+      <ul>
+     
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Jogos</a></li>
+        <li><a href="#">Top Jogos</a></li>
+        <li><a href="#">Jogos para carroças</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="buttons-container">
+    <button class="content-button" id="start-button" onclick="showGameDetails()">Início</button>
+    <button class="content-button" id="weapons-button" onclick="showContent('armas')">Armas</button>
+    <button class="content-button" id="map-button" onclick="showContent('mapa')">Mapa</button>
+    <button class="content-button" id="tips-button" onclick="showContent('dicas')">Dicas</button>
+  </div>
+
+  <div class="content" id="armas" style="display: none;">
+    armas
+   </div>
+   
+   <div class="content" id="mapa" style="display: none;">
+     Conteúdo de Mapa
+   </div>
+   
+   <div class="content" id="dicas" style="display: none;">
+     Conteúdo de Dicas
+   </div>
+
+  <div class="game-details">
+    <h1 id="game-name"></h1>
+    <img id="game-image" src="" alt="Baldur's Gate">
+    <p id="game-description">
+      Hogwarts Legacy é um RPG de ação e mundo aberto ambientado no mundo apresentado nos livros de Harry Potter. Agora você pode assumir o controle da ação e criar sua própria aventura. Descubra a sensação de viver em Hogwarts enquanto faz aliados, luta contra bruxos das trevas e, por fim, decide o destino do mundo bruxo.
+    </p>
+    <p id="game-metacritic"></p>
+    <div id="game-stores"></div>
+    <div id="game-screenshots"></div>
+    <div id="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/NthGfn_ddRQ?si=xGc99--g6or4HkhG&amp;controls=0&amp;autoplay=1&amp;mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=true; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- Adicione outros elementos para conquistas, informações detalhadas, etc., conforme necessário -->
+  </div>
+
+  <script src="../js/scriptbuttonright.js"></script>
+  <script src="../js/scripthogwards.js"></script>
+  <script src="../js/scriptmenu.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- Inclua jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</body>
+</html>

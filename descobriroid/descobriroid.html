@@ -1,0 +1,16 @@
+<script>
+    const gameName = 'baldurs-gate-3'; // Nome do jogo que você deseja buscar
+
+fetch(`https://api.rawg.io/api/games?search=${gameName}&key=aeea2e7061b34b6a8f48251822f2b2c0`)
+  .then(response => response.json())
+  .then(data => {
+    if (data.results && data.results.length > 0) {
+      const gameId = data.results[0].id;
+      console.log(`O ID do jogo '${gameName}' é: ${gameId}`);
+    } else {
+      console.log(`Jogo '${gameName}' não encontrado.`);
+    }
+  })
+  .catch(error => console.error('Erro ao buscar o jogo:', error));
+
+  </script>

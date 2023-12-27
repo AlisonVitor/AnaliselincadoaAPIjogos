@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="game-name"></title>
+  <link rel="stylesheet" type="text/css" href="../css/stylejogos.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/header.css"/>
+</head>
+<body>
+
+  <header>
+  
+    <nav>
+      <div class="menu-icon">
+        <!-- Ícone do menu hamburguer -->
+        Menu &#9776;
+      </div>
+      <ul>
+     
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Jogos</a></li>
+        <li><a href="#">Top Jogos</a></li>
+        <li><a href="#">Jogos para carroças</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="buttons-container">
+    <button class="content-button" id="start-button" onclick="showGameDetails()">Início</button>
+    <button class="content-button" id="map-button" onclick="showContent('mapa')">Mapa</button>
+    <button class="content-button" id="tips-button" onclick="showContent('dicas')">Dicas</button>
+  </div>
+  
+
+  <div class="game-details">
+    <h1 id="game-name"></h1>
+    <img id="game-image" src="" alt="Baldur's Gate">
+    <p id="game-description">
+      Baldur's Gate é um RPG da Bioware que tem como cenário a cidade de mesmo nome do reino de Forgotten Realms. Esse reino consiste em um pacote de expansão para o RPG de mesa Dungeons and Dragons (D&D) que fez muito sucesso ao apresentar muitas cidades com histórias próprias e vários NPCs de altíssimo nível de poder.
+      Baseado também no sistema de regras do D&D, o processo de criação de personagens é bastante similar ao que é visto nesse RPG. Escolhe-se uma classe — donde as principais são os guerreiros, magos e ladinos, uma raça — humano, elfo ou anão, e distribui-se pontos entre os atributos como força e inteligência mediante a sorte obtida no rolar de 3 dados virtuais.
+    </p>
+    <p id="game-metacritic"></p>
+    <div id="game-stores"></div>
+    <div id="game-screenshots"></div>
+    <div id="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/WvMf_DcyWbI?si=xOBWwm6PXoRE8Qm7&amp;controls=0&amp;autoplay=1&amp;mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=true; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- Adicione outros elementos para conquistas, informações detalhadas, etc., conforme necessário -->
+  </div>
+
+
+  </div>
+  <!-- Divs para armas, mapa e dicas (inicialmente invisíveis) -->
+   
+   <div class="content" id="mapa" style="display: none; ">
+    <h2>Mapa NAUTILOID </h2>
+    <iframe src="https://mapgenie.io/baldurs-gate-3/maps/nautiloid?embed=light" height="500" style="position: relative; width: 100%;"></iframe>
+
+    <h2>Mapa WILDERNESS</h2>
+    <iframe src="https://mapgenie.io/baldurs-gate-3/maps/wilderness?embed=light"  style="position: relative; width: 100%; height: 600px;"></iframe>
+
+
+    <h2>Mapa SHADOW-CURSED LANDS</h2>
+    <iframe src="https://mapgenie.io/baldurs-gate-3/maps/shadow-cursed-lands?embed=light"  style="position: relative; width: 100%; height: 600px;"></iframe>
+
+    <h2>Mapa BALDUR'S GATE</h2>
+    <iframe src="https://mapgenie.io/baldurs-gate-3/maps/baldurs-gate?embed=light" style="position: relative; width: 100%; height: 600px;"></iframe>
+   </div>
+   
+  <div class="content" id="dicas" style="display: none;">
+    
+    <a href="#" class="classesbaldurgate" onclick="mostrarDiv()">Conheça todas as classes e subclasses para jogar no game</a>
+    <div id="divVisivel" style="display: none;">
+        
+      <p class="texto-div">
+      A classe de um personagem em Baldur's Gate 3 é uma das características mais distintivas. 
+      Cada classe representa uma vocação diferente e oferece habilidades, poderes e capacidades únicas que influenciam a interação do personagem com o mundo. Elas determinam a maioria das habilidades, tanto dentro quanto fora do combate. À medida que um personagem avança nos níveis de sua classe, adquire novos poderes e habilidades incríveis.
+       O nível máximo que um personagem pode atingir em Baldur's Gate 3 é o nível 12.
+       Cada classe proporciona opções de diálogo exclusivas, disponíveis somente para aquele tipo específico de personagem. Além disso, cada classe possui animações exclusivas para lançamento de feitiços (enquanto as animações de ataque são baseadas na raça).
+      </p>
+
+      <div class="badges">
+
+      <div class="tooltip" data-text="Barbarian Tooltip">
+        <img src="../img/120px-Class_Barbarian_Badge_Icon.png" alt="badge barbaros">
+        <span class="tooltiptext">
+          <img src="../img/120px-Class_Barbarian_Badge_Icon.png" alt="badge barbaros">
+          Bárbaro é uma classe em Baldur's Gate 3. Os bárbaros utilizam sua destreza marcial e fúria primal para se fortalecerem e dominarem os inimigos em combate.
+        </span>
+      </div>
+
+      <div class="tooltip" data-text="Bard Tooltip">
+        <img src="../img/120px-Class_Bard_Badge_Icon.png" alt="badge bardos">
+        <span class="tooltiptext">
+          <img src="../img/120px-Class_Bard_Badge_Icon.png" alt="badge bardos">
+          Bardo é uma classe de personagem em Baldur's Gate 3. Os bardos são contadores de histórias, artistas e intérpretes experientes. Eles canalizam seu poder através de canções, discursos ou performances para lançar magias. Os bardos utilizam Carisma como sua habilidade principal.
+        </span>
+      </div>
+
+      <div class="tooltip" data-text="Cleric Tooltip">
+        <img src="../img/120px-Class_Cleric_Badge_Icon.png" alt="badge cleric">
+        <span class="tooltiptext">
+          <img src="../img/120px-Class_Cleric_Badge_Icon.png" alt="badge cleric">
+          Clérigo é uma classe de personagem em Baldur's Gate 3. Os clérigos adoram e realizam a vontade de suas divindades para o mundo, para melhor ou para pior. Eles canalizam o poder de sua fé para lançar feitiços. Clérigos usam Sabedoria como seu valor de habilidade principal. As 
+        </span>
+      </div>
+
+      <div class="tooltip" data-text="Druid Tooltip">
+        <img src="../img/120px-Class_Druid_Badge_Icon.png" alt="">
+        <span class="tooltiptext">
+          <img src="../img/120px-Class_Druid_Badge_Icon.png" alt="">
+          Druida é uma classe de personagem em Baldur's Gate 3. Os druidas estão intimamente ligados à natureza e aos animais que nela habitam. Eles utilizam o poder da natureza para lançar magias e têm a habilidade de se transformar em diversas criaturas. Os druidas usam Sabedoria como sua principal habilidade.
+        </span>
+      </div>
+      
+      <div class="tooltip" data-text="Fighter Tooltip">
+               <img src="../img/120px-Class_Fighter_Badge_Icon.png" alt="">
+        <span class="tooltiptext">
+                 <img src="../img/120px-Class_Fighter_Badge_Icon.png" alt="">
+                 Lutador é uma classe de personagem em Baldur's Gate 3. Os lutadores usam sua perícia marcial para enfrentar inimigos e apoiar aliados durante o combate. Eles utilizam Força ou Destreza como seu valor de habilidade principal.
+        </span>
+      </div>
+
+      <div class="tooltip" data-text="Monk Tooltip">
+               <img src="../img/120px-Class_Monk_Badge_Icon.png" alt="">
+        <span class="tooltiptext">
+                 <img src="../img/120px-Class_Monk_Badge_Icon.png" alt="">
+                 Monge é uma classe de personagem em Baldur's Gate 3. Monges são combatentes desarmados capazes de gastar Pontos de Ki para executar habilidades especiais. Os principais atributos chave do monge são Sabedoria, Destreza e Constituição.
+        </span>
+      </div>
+      
+      <div class="tooltip" data-text="Paladin Tooltip">
+                 <img src="../img/120px-Class_Paladin_Badge_Icon.png" alt="">
+        <span class="tooltiptext">
+                   <img src="../img/120px-Class_Paladin_Badge_Icon.png" alt="">
+                   Paladino é uma classe de personagem em Baldur's Gate 3. Os paladinos são mestres em uma variedade de armas e armaduras. Eles canalizam o poder de seu juramento sagrado para curar os enfermos e feridos, e para aniquilar seus inimigos. Pontos importantes de habilidade para paladinos incluem Força (ou Destreza), Carisma.
+        </span>
+      </div>
+
+      <div class="tooltip" data-text="Ranger Tooltip">
+                    <img src="../img/120px-Class_Ranger_Badge_Icon.png" alt="">
+        <span class="tooltiptext">
+                      <img src="../img/120px-Class_Ranger_Badge_Icon.png" alt="">
+                      Ranger é uma classe de personagem em Baldur's Gate 3. Sintonizados com a natureza e seu entorno, os rangers utilizam tanto seu conhecimento das terras selvagens quanto magias para perseguir suas presas. Pontos importantes de habilidade para rangers incluem Destreza (ou Força), Constituição e Sabedoria.
+        </span>
+      </div>
+
+      <div class="tooltip" data-text="Rogue Tooltip">
+                <img src="../img/120px-Class_Rogue_Badge_Icon.png" alt="">
+        <span class="tooltiptext">
+                <img src="../img/120px-Class_Rogue_Badge_Icon.png" alt="">
+                Ladino é uma classe de personagem em Baldur's Gate 3. Os ladrões são especialistas na arte do sigilo e confiam em sua astúcia para dominar qualquer situação desafiadora. Ladrões usam Destreza como sua habilidade principal.
+        </span>
+      </div>
+
+        <div class="tooltip" data-text="Cleric Tooltip">
+               <img src="../img/120px-Class_Sorcerer_Badge_Icon.png" alt="">
+        <span class="tooltiptext">
+               <img src="../img/120px-Class_Sorcerer_Badge_Icon.png" alt="">
+            Feiticeiro é uma classe de personagem em Baldur's Gate 3. Os feiticeiros usam seus poderes mágicos inatos para enfrentar inimigos e ajudar aliados durante o combate. Feiticeiros utilizam Carisma como sua habilidade principal.
+        </span>
+      </div>
+
+      <div class="tooltip" data-text="Cleric Tooltip">
+             <img src="../img/120px-Class_Warlock_Badge_Icon.png" alt="">
+        <span class="tooltiptext">
+             <img src="../img/120px-Class_Warlock_Badge_Icon.png" alt="">
+             Bruxo é uma classe de personagem em Baldur's Gate 3. Os bruxos canalizam a magia do pacto de seus patronos para enfrentar inimigos e ajudar aliados durante o combate. Bruxos utilizam Carisma como sua habilidade principal.
+        </span>
+      </div>
+
+       <div class="tooltip" data-text="Cleric Tooltip">
+               <img src="../img/120px-Class_Wizard_Badge_Icon.png" alt="">
+            <span class="tooltiptext">
+                 <img src="../img/120px-Class_Wizard_Badge_Icon.png" alt="">
+                 Mago é uma classe de personagem em Baldur's Gate 3. Os magos canalizam a magia por meio de seu amplo conhecimento do arcano para enfrentar inimigos e ajudar aliados durante o combate. Magos utilizam Inteligência como sua habilidade principal.
+            </span>
+      </div>
+    
+
+      </div>
+    </div>
+   <script>
+
+
+
+      function mostrarDiv() {
+        var divVisivel = document.getElementById('divVisivel');
+        if (divVisivel.style.display === 'none') {
+            divVisivel.style.display = 'block';
+        } else {
+            divVisivel.style.display = 'none';
+        }
+    }
+   </script>
+
+  <script src="../js/scriptbuttonright.js"></script>
+  <script src="../js/scriptbaldurgate.js"></script>
+  <script src="../js/scriptmenu.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- Inclua jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</body>
+</html>

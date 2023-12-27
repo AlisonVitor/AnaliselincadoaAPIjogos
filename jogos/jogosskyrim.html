@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo: Baldur's Gate</title>
+  <link rel="stylesheet" type="text/css" href="../css/stylejogos.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/header.css"/>
+</head>
+<body>
+
+  <header>
+  
+    <nav>
+      <div class="menu-icon">
+        <!-- Ícone do menu hamburguer -->
+        Menu &#9776;
+      </div>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Jogos</a></li>
+        <li><a href="#">Top Jogos</a></li>
+        <li><a href="#">Jogos para carroças</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="game-details">
+    <h1 id="game-name"></h1>
+    <img id="game-image" src="" alt="Baldur's Gate">
+    <p id="game-description">
+      Baldur's Gate é um RPG da Bioware que tem como cenário a cidade de mesmo nome do reino de Forgotten Realms. Esse reino consiste em um pacote de expansão para o RPG de mesa Dungeons and Dragons (D&D) que fez muito sucesso ao apresentar muitas cidades com histórias próprias e vários NPCs de altíssimo nível de poder.
+      Baseado também no sistema de regras do D&D, o processo de criação de personagens é bastante similar ao que é visto nesse RPG. Escolhe-se uma classe — donde as principais são os guerreiros, magos e ladinos, uma raça — humano, elfo ou anão, e distribui-se pontos entre os atributos como força e inteligência mediante a sorte obtida no rolar de 3 dados virtuais.
+    </p>
+    <p id="game-metacritic"></p>
+    <div id="game-stores"></div>
+    <div id="game-screenshots"></div>
+    <!-- Adicione outros elementos para conquistas, informações detalhadas, etc., conforme necessário -->
+  </div>
+
+   
+
+  <script>
+const gameId = '5679'; // Substitua pelo ID do jogo Baldur's Gate
+
+// Execute uma requisição à API para obter os detalhes do jogo
+fetch(`https://api.rawg.io/api/games/${gameId}?key=aeea2e7061b34b6a8f48251822f2b2c0`)
+  .then(response => response.json())
+  .then(data => {
+    // Preencha os elementos HTML com as informações do jogo
+    const gameImage = document.getElementById('game-image');
+    gameImage.src = data.background_image;
+
+    // Lógica para colorir dinamicamente o Metacritic Score
+    const gameMetacritic = document.getElementById('game-metacritic');
+    const metacriticScore = data.metacritic;
+    const gameName = document.getElementById('game-name');
+    gameName.textContent = data.name; // Define o nome do jogo
+    gameName.textContent = data.name; // Define o nome do jogo
+    gameMetacritic.textContent = `Nota: ${metacriticScore}`;
+    if (metacriticScore > 90) {
+      gameMetacritic.style.backgroundColor = 'green';
+    } else if (metacriticScore > 80) {
+      gameMetacritic.style.backgroundColor = 'yellow';
+    } else {
+      gameMetacritic.style.backgroundColor = 'orange';
+    }
+    
+    // Busca por screenshots do jogo usando a rota /games/{id}/screenshots
+    fetch(`https://api.rawg.io/api/games/${gameId}/screenshots?key=aeea2e7061b34b6a8f48251822f2b2c0`)
+      .then(response => response.json())
+      .then(screenshotData => {
+        // Verifica se há screenshots disponíveis
+        if (screenshotData.results && screenshotData.results.length > 0) {
+          const gameScreenshots = document.getElementById('game-screenshots');
+          const screenshotsCarousel = document.createElement('div');
+
+          screenshotData.results.forEach(screenshot => {
+            const screenshotImg = document.createElement('img');
+            screenshotImg.src = screenshot.image;
+            screenshotImg.alt = 'Screenshot';
+            screenshotsCarousel.appendChild(screenshotImg);
+          });
+
+          gameScreenshots.appendChild(screenshotsCarousel);
+      
+          $(document).ready(function(){
+            $(screenshotsCarousel).slick({
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              autoplay: true,
+              autoplaySpeed: 2000,
+              arrows: false, // Oculta os botões de navegação
+            });
+          });
+        } else {
+          const gameScreenshots = document.getElementById('game-screenshots');
+          gameScreenshots.textContent = 'Screenshots não disponíveis';
+        }
+      })
+      .catch(screenshotError => console.error('Erro ao buscar screenshots do jogo:', screenshotError));
+
+  })
+  .catch(error => console.error('Erro ao buscar dados do jogo:', error));
+
+
+  </script>
+  <script src="../js/scriptmenu.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- Inclua jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</body>
+</html>
